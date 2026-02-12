@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-Server runs at **http://localhost:5000**. Health: `GET http://localhost:5000/api/health`.
+Server runs at **http://localhost:5000**.
 
 ### Frontend
 
