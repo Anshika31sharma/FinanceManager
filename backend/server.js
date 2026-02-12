@@ -12,8 +12,18 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 connectDB();
 
 const app = express();
-// Allow frontend origin in production (Vercel). In dev, origin: true allows all.
-const corsOrigin = process.env.FRONTEND_URL || true;
+// Allow frontend origin in production (Vercel). Must be origin only, e.g. https://your-app.vercel.app (no path).
+const frontendUrl = process.env.FRONTEND_URL;
+const corsOrigin = frontendUrl
+  ? (() => {
+      try {
+        const u = new URL(frontendUrl);
+        return u.origin;
+      } catch {
+        return frontendUrl;
+      }
+    })()
+  : true;
 app.use(cors({ origin: corsOrigin, credentials: true }));
 app.use(express.json());
 

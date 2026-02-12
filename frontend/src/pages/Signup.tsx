@@ -41,6 +41,7 @@ export function Signup() {
               <label className="block text-sm font-medium mb-1.5 text-slate-700">Name</label>
               <input
                 type="text"
+                autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -52,6 +53,7 @@ export function Signup() {
               <label className="block text-sm font-medium mb-1.5 text-slate-700">Email</label>
               <input
                 type="email"
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -63,6 +65,7 @@ export function Signup() {
               <label className="block text-sm font-medium mb-1.5 text-slate-700">Password</label>
               <input
                 type="password"
+                autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
